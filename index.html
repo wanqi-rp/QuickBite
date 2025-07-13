@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Canteen</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+  <!-- Only one chatbot bubble script in head -->
+  <script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2025/07/11/07/20250711074352-Z6OEXKPX.js"></script>
+</head>
+<body>
+  <div id="loginPage" class="login-page">
+    <div class="login-container">
+      <h1>Digital Canteen Login</h1>
+      <button class="login-btn" id="vendorLoginBtn">Login - Vendors</button>
+      <button class="login-btn" id="customerLoginBtn">View Menu - Customers</button>
+    </div>
+  </div>
+  <div id="mainContent" style="display:none;">
+    <header>
+      <h1>Digital Canteen</h1>
+      <p>Browse and order from your favorite stalls!</p>
+    </header>
+    <main>
+      <section class="stalls-grid" id="stallsGrid">
+        <!-- NORTH -->
+        <div class="stall-card" data-stall="north-western-japanese">
+          <img src="https://th.bing.com/th/id/OIP.VnxdRZnMJnvUtKVABPfzIwHaFH?w=223&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" alt="Western & Japanese">
+          <h2>Western & Japanese (North)</h2>
+          <button>View Menu</button>
+        </div>
+        <div class="stall-card" data-stall="north-prata">
+          <img src="https://th.bing.com/th/id/OIP.dj9X1XE9SjDE3PdIR-a68wAAAA?w=266&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" alt="Prata">
+          <h2>Prata (North)</h2>
+          <button>View Menu</button>
+        </div>
+        <div class="stall-card" data-stall="north-banmian-fishsoup">
+          <img src="https://th.bing.com/th/id/OIP.f6zcLj8Cm07MgTtz_S8fiAHaFa?w=232&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" alt="Banmian/Fishsoup">
+          <h2>Banmian/Fishsoup (North)</h2>
+          <button>View Menu</button>
+        </div>
+        <div class="stall-card" data-stall="north-waffles">
+          <img src="https://th.bing.com/th/id/OIP.EUYCHVYPbiZefR-SACYIYAHaE8?w=255&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" alt="Waffles">
+          <h2>Waffles (North)</h2>
+          <button>View Menu</button>
+        </div>
+        <!-- SOUTH -->
+        <div class="stall-card" data-stall="south-chickenrice">
+          <img src="https://th.bing.com/th/id/OIP.vXieBmpBXZ7nd9yNRpUWNAHaFj?w=313&h=188&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" alt="Chicken Rice">
+          <h2>Chicken Rice (South)</h2>
+          <button>View Menu</button>
+        </div>
+        <div class="stall-card" data-stall="south-nanyangcafe">
+          <img src="https://ts1.mm.bing.net/th?id=OIP.1d-DSLzdgb6vNZ1NlvCIaAHaHa&pid=15.1" alt="Nanyang Cafe">
+          <h2>Nanyang Cafe (South)</h2>
+          <button>View Menu</button>
+        </div>
+        <div class="stall-card" data-stall="south-taiwan">
+          <img src="https://th.bing.com/th/id/OIP.aXKsoxcZPPc_YN9TcCFBBwHaHa?w=180&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" alt="Taiwan">
+          <h2>Taiwan (South)</h2>
+          <button>View Menu</button>
+        </div>
+        <div class="stall-card" data-stall="south-koreanjapanese">
+          <img src="https://th.bing.com/th/id/OIP.oOSOWb9nLBhSlYPqgAU7eQHaE8?w=294&h=196&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" alt="Korean/Japanese">
+          <h2>Korean/Japanese (South)</h2>
+          <button>View Menu</button>
+        </div>
+        <!-- LAWN -->
+        <div class="stall-card" data-stall="lawn-thai">
+          <img src="https://th.bing.com/th/id/OIP.hY-eFP0uLdckRfV2PMconQHaHa?w=189&h=189&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" alt="Thai">
+          <h2>Thai (Lawn)</h2>
+          <button>View Menu</button>
+        </div>
+        <div class="stall-card" data-stall="lawn-western">
+          <img src="https://th.bing.com/th/id/OIP.OowDmNa2QVm0PDsw6Ugj7wHaE8?w=245&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="Western">
+          <h2>Western (Lawn)</h2>
+          <button>View Menu</button>
+        </div>
+        <div class="stall-card" data-stall="lawn-ayampenyet">
+          <img src="https://th.bing.com/th/id/OIP.wvylONuU9RfX9zlDK4PekAHaFj?w=263&h=197&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" alt="Ayam Penyet">
+          <h2>Ayam Penyet (Lawn)</h2>
+          <button>View Menu</button>
+        </div>
+        <div class="stall-card" data-stall="lawn-japanesekorean">
+          <img src="https://th.bing.com/th/id/OIP.REL7TS65ziELY-HThzZmyQHaE8?w=244&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" alt="Japanese/Korean">
+          <h2>Japanese/Korean (Lawn)</h2>
+          <button>View Menu</button>
+        </div>
+      </section>
+      <section id="stallMenu" class="stall-menu" style="display:none;"></section>
+    </main>
+    <footer>
+      <p>&copy; 2025 Digital Canteen. All rights reserved.</p>
+      <button onclick="window.open('https://cdn.botpress.cloud/webchat/v3.0/shareable.html?configUrl=https://files.bpcontent.cloud/2025/07/13/09/20250713092619-WGALOKYB.json','_blank')" style="margin-top:1rem;padding:0.7rem 1.5rem;font-size:1rem;border-radius:20px;background:#2d6cdf;color:#fff;border:none;cursor:pointer;">Chat with our other assistant</button>
+    </footer>
+  </div>
+</div>
+  <!-- Only one chatbot bubble script at end of body for proper loading -->
+  <script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2025/07/11/07/20250711074352-Z6OEXKPX.js"></script>
+  <!-- If the second bot button shows 'Could not find Bot Id', check the configUrl and make sure the .json file exists and is public -->
+</body>
+</html>
