@@ -278,7 +278,7 @@ document.addEventListener('DOMContentLoaded', function () {
         saveWaitLevels();
         // Refresh menu
         showStallMenu(stallKey, location);
-        alert('Stall reset!');
+        // Notification removed: Stall reset
       };
     } else if (window.userRole === 'customer') {
       document.querySelector('.preorder-btn').onclick = showCart;
@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (qty > 0) {
         cart.push({ food: food.item, price: food.price, img: food.img, qty, stall: stallKey, location });
         modal.style.display = 'none';
-        alert('Added to cart!');
+        // Notification removed: Added to cart
       }
     };
   }
@@ -397,7 +397,7 @@ document.addEventListener('DOMContentLoaded', function () {
         saveWaitLevels(); // Persist wait levels after preorder
         saveOrders(); // Persist orders after preorder
         cart = [];
-        alert('Preorder placed!');
+        // Notification removed: Preorder placed
         showStallsForLocation(window.customerLocation);
         stallMenu.style.display = 'none';
         stallsGrid.style.display = 'grid';
@@ -539,9 +539,21 @@ document.addEventListener('DOMContentLoaded', function () {
         vendorStallKey = stallMap[stallName].key;
         vendorLocation = stallMap[stallName].location;
         showMainContent('vendor');
-        alert('Vendor login successful!');
+        // No notification for successful login
       } else {
-        alert('Invalid stall name or password. Password is your stall name.');
+        // Show only generic error, no hints
+        // Remove any previous error message
+        const form = document.getElementById('vendorForm');
+        const prevError = form.querySelector('.login-error');
+        if (prevError) prevError.remove();
+        // Show new error message
+        const errorMsg = document.createElement('div');
+        errorMsg.textContent = 'Incorrect password. Try again.';
+        errorMsg.className = 'login-error';
+        errorMsg.style.color = '#d32f2f';
+        errorMsg.style.marginTop = '1rem';
+        errorMsg.style.fontWeight = 'bold';
+        form.appendChild(errorMsg);
       }
     };
   });
